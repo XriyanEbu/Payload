@@ -1,8 +1,5 @@
-// payload.js (Rivalryhub.xml সিমুলেশন)
-// ⚠️ শিক্ষামূলক সিমুলেশন: স্ক্যাম সাইটের বদলে YouTube-এ রিডাইরেক্ট
-
 (function() {
-    console.log("🔥 [PAYLOAD EXECUTED] 🔥");
+    console.log(" [PAYLOAD EXECUTED] ");
 
     // ১. URL থেকে id নেওয়া
     const urlParams = new URLSearchParams(window.location.search);
@@ -13,9 +10,9 @@
 
     if (isBot) {
         // ==========================================
-        // 🟢 [BOT PATH] গুগলবটের জন্য নিরাপদ SEO কন্টেন্ট
+        // [BOT PATH] গুগলবটের জন্য নিরাপদ SEO কন্টেন্ট
         // ==========================================
-        console.log("🤖 [BOT DETECTED] Showing safe content.");
+        console.log("[BOT DETECTED] Showing safe content.");
         
         document.title = `[LIVE] ${eventId} Stream`;
         document.body.innerHTML = `
@@ -24,11 +21,11 @@
         `;
     } else {
         // ==========================================
-        // 🔴 [HUMAN PATH] মানুষের জন্য YouTube-এ রিডাইরেক্ট
+        // [HUMAN PATH] মানুষের জন্য YouTube-এ রিডাইরেক্ট
         // ==========================================
-        console.log("🧑 [HUMAN DETECTED] Redirecting to YouTube...");
+        console.log("[HUMAN DETECTED] Redirecting to YouTube...");
 
-        // ⚠️ এখানে হ্যাকাররা window.location.href = "scam-site.com" দেয়
+        // এখানে হ্যাকাররা window.location.href = "scam-site.com" দেয়
         // আমরা শিক্ষার জন্য YouTube-এ পাঠাচ্ছি
         window.location.href = "https://www.youtube.com/watch?v=dQw4w9WgXcQ";
     }
